@@ -5,15 +5,19 @@ using UnityEngine;
 public class AgentOnSelect : MonoBehaviour
 {
     [SerializeField]
-    Material selected;
+    GameObject selectedShader;
     [SerializeField]
-    Material unselected;
+    GameObject healthBarCanvas;
 
     bool isSelected = false;
+    GameManager gameManager;
     private void Start()
     {
         isSelected = false;
-        Camera.main.transform.parent.GetComponent<AgentsSelector>().selectableObjects.Add(gameObject);
+        selectedShader.SetActive(isSelected);
+        // healthBarCanvas.SetActive(isSelected);
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        gameManager.GetSelectableObjects().Add(gameObject);
     }
 
     public bool IsSelected()
@@ -26,11 +30,13 @@ public class AgentOnSelect : MonoBehaviour
         isSelected = !isSelected;
         if (isSelected)
         {
-            GetComponent<Renderer>().material = selected;
+            selectedShader.SetActive(isSelected);
+            // healthBarCanvas.SetActive(isSelected);
         }
         else
         {
-            GetComponent<Renderer>().material = unselected;
+            selectedShader.SetActive(isSelected);
+            // healthBarCanvas.SetActive(isSelected);
         }
     }
 }

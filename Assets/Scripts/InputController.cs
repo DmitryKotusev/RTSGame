@@ -15,6 +15,8 @@ public class InputController : MonoBehaviour
     public bool leftMouseButtonUp;
     public bool leftMouseButtonPressed;
     public bool rightMouseButtonPressed;
+    public bool rightMouseButtonDown;
+    public bool rightMouseButtonUp;
     public bool midMouseButtonPressed;
     public float deltaXMouseMove;
     public float deltaYMouseMove;
@@ -49,8 +51,10 @@ public class InputController : MonoBehaviour
         midMouseButtonPressed = Input.GetMouseButton(2);
         leftMouseButtonPressed = Input.GetMouseButton(0);
         rightMouseButtonPressed = Input.GetMouseButton(1);
+        rightMouseButtonDown = Input.GetMouseButtonDown(1);
+        rightMouseButtonUp = Input.GetMouseButtonUp(1);
         ////////////////
-        
+
         // Scroll wheel
         mouseWheelUp = Input.GetAxis("Mouse ScrollWheel") > 0;
         mouseWheelDown = Input.GetAxis("Mouse ScrollWheel") < 0;

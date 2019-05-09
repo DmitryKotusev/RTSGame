@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - InputController
+  - GameManager
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - 
   - 
   - Clickables
-  - 
+  - Ground
   - 
   - 
   - 
