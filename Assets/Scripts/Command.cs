@@ -77,6 +77,26 @@ public class Command : MonoBehaviour
             objNavAgent.SetDestination(destination
                 + direction * lineIndex * radiusMultiplier * agentRadius
                 + rightDirection * columnIndex * radiusMultiplier * agentRadius);
+            if (!CheckAgentAlreadyInPlace(objNavAgent))
+            {
+                Animator objAnimator = selectedUnits[i].GetComponent<Animator>();
+                objAnimator.SetBool("MoveToNewDestination", true);
+            }
         }
+    }
+
+    private bool CheckAgentAlreadyInPlace(NavMeshAgent objNavAgent)
+    {
+        if (!objNavAgent.pathPending)
+        {
+            if (objNavAgent.remainingDistance <= objNavAgent.stoppingDistance)
+            {
+                if (!objNavAgent.hasPath || objNavAgent.velocity.sqrMagnitude == 0f)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
