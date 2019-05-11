@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class IdleBehaviour : NPCBaseFSM
 {
+    [SerializeField]
+    LayerMask agentsMask;
+
+    // AgentTeam agentTeam;
     // OnStateEnter is called before OnStateEnter is called on any state inside this state machine
-    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        base.OnStateEnter(animator, stateInfo, layerIndex);
+        // agentTeam = NPC.GetComponent<AgentData>().agentTeam;
+        // NPC.GetComponent<AgentData>().lookDistance;
+    }
 
     // OnStateUpdate is called before OnStateUpdate is called on any state inside this state machine
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        LookAround(animator);
+    }
 
     // OnStateExit is called before OnStateExit is called on any state inside this state machine
     //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -24,12 +30,6 @@ public class IdleBehaviour : NPCBaseFSM
 
     // OnStateMove is called before OnStateMove is called on any state inside this state machine
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
-
-    // OnStateIK is called before OnStateIK is called on any state inside this state machine
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{
     //    
     //}
@@ -45,4 +45,30 @@ public class IdleBehaviour : NPCBaseFSM
     //{
     //    
     //}
+
+    void LookAround(Animator animator)
+    {
+        Collider npcsCollider = NPC.GetComponent<Collider>();
+        npcsCollider.enabled = false;
+        Collider[] agentsColliders = Physics.OverlapSphere(NPC.transform.position, NPC.GetComponent<AgentData>().lookDistance, agentsMask);
+
+        for (int i = 0; i < agentsColliders.Length; i++)
+        {
+            // Enemy agent detected
+            if (agentsColliders[i].GetComponent<AgentData>().agentTeam != NPC.GetComponent<AgentData>().agentTeam)
+            {
+                // Check with raycast
+                RaycastHit raycastHit;
+                if (Physics.Raycast(NPC.transform.position, agentsColliders[i].transform.position - NPC.transform.position, out raycastHit,
+                    Vector3.Distance(NPC.transform.position, agentsColliders[i].transform.position)))
+                {
+                    if (raycastHit.transform.gameObject == agentsColliders[i].transform.gameObject)
+                    {
+                        animator.SetBool("AttackEnemy", true);
+                    } 
+                }
+            }
+        }
+        npcsCollider.enabled = true;
+    }
 }

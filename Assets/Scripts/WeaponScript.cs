@@ -20,6 +20,7 @@ public class WeaponScript : MonoBehaviour
         if (Time.time - latestShotTime > weaponConfig.rateOfFire)
         {
             Fire();
+            return true;
         }
         return false;
     }
@@ -31,6 +32,7 @@ public class WeaponScript : MonoBehaviour
         // SetBulletsParameters
         Bullet bulletScript = bulletClone.GetComponent<Bullet>();
         bulletScript.SetLifeTime(weaponConfig.bulletLifeTime);
+        bulletScript.SetDamage(weaponConfig.damage);
         bulletClone.GetComponent<Rigidbody>().AddForce(launchTransform.transform.up * weaponConfig.bulletSpeed);
     }
 }
