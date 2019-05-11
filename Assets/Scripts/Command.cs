@@ -73,14 +73,17 @@ public class Command : MonoBehaviour
             int columnIndex = i % squareSize - halfSize;
             int lineIndex = i / squareSize - halfSize;
 
-            NavMeshAgent objNavAgent = selectedUnits[i].GetComponent<NavMeshAgent>();
-            objNavAgent.SetDestination(destination
-                + direction * lineIndex * radiusMultiplier * agentRadius
-                + rightDirection * columnIndex * radiusMultiplier * agentRadius);
-            if (!CheckAgentAlreadyInPlace(objNavAgent))
+            if (selectedUnits[i] != null)
             {
-                Animator objAnimator = selectedUnits[i].GetComponent<Animator>();
-                objAnimator.SetBool("MoveToNewDestination", true);
+                NavMeshAgent objNavAgent = selectedUnits[i].GetComponent<NavMeshAgent>();
+                objNavAgent.SetDestination(destination
+                    + direction * lineIndex * radiusMultiplier * agentRadius
+                    + rightDirection * columnIndex * radiusMultiplier * agentRadius);
+                if (!CheckAgentAlreadyInPlace(objNavAgent))
+                {
+                    Animator objAnimator = selectedUnits[i].GetComponent<Animator>();
+                    objAnimator.SetBool("MoveToNewDestination", true);
+                }
             }
         }
     }

@@ -42,6 +42,10 @@ public class Health : MonoBehaviour
     public void TakeDamage(float damagePoints)
     {
         healthPoints = Mathf.Clamp(healthPoints - damagePoints, 0, maxPoints);
+        if (healthPoints == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void TreatHealth(float treatPoints)

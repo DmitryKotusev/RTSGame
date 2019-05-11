@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c39397baf3cae94698a2696420bcd0c, type: 3}
   m_Name: MachineGunConfig
   m_EditorClassIdentifier: 
-  damage: 20
-  rateOfFire: 4
+  damage: 2
+  rateOfFire: 0.2
   bulletSpeed: 500
   bulletLifeTime: 10
   weaponType: 2

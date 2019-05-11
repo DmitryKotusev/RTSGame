@@ -14,7 +14,7 @@ public class AgentData : MonoBehaviour
         WeaponScript weaponScript = weapon.GetComponent<WeaponScript>();
         result += weaponScript.weaponConfig.damage
             + weaponScript.weaponConfig.rateOfFire
-            + weaponScript.weaponConfig.bulletSpeed;
+            + weaponScript.weaponConfig.bulletSpeed * 0.2f;
         Health healthScript = GetComponent<Health>();
         result += 1 / healthScript.GetHealthPoints();
         result += 1 / distance;

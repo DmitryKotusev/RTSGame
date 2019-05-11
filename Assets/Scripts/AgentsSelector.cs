@@ -136,7 +136,10 @@ public class AgentsSelector : MonoBehaviour
     {
         foreach (GameObject obj in selectedObjects)
         {
-            obj.GetComponent<AgentOnSelect>().OnSelect();
+            if (obj != null)
+            {
+                obj.GetComponent<AgentOnSelect>().OnSelect();
+            }
         }
 
         selectedObjects.Clear();
