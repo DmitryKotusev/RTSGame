@@ -152,6 +152,8 @@ MonoBehaviour:
   regenerateSpeed: 1
   increaseHealthTime: 5
   maxPoints: 100
+  deathParticles: {fileID: 6476914981966128264, guid: f93766175582a8441b8717e2803c399b,
+    type: 3}
   healthBar: {fileID: 6410068344321185234}
   healthPoints: 0
 --- !u!95 &1048979430735561901
@@ -188,6 +190,9 @@ MonoBehaviour:
   weapon: {fileID: 1574958840814807007}
   agentTeam: 0
   lookDistance: 15
+  needHelp: 0
+  targetPosition: {x: 0, y: 0, z: 0}
+  comradToHelp: {fileID: 0}
 --- !u!1 &1048979430840912776
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +548,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShotGun
       objectReference: {fileID: 0}
+    - target: {fileID: 3250067107259653886, guid: 156c468c13a70634188d63dfbf30ce35,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 6825696334506482498, guid: 8e0668e94322a9d418f06025d6ed1647,
+        type: 3}
     - target: {fileID: 3250067107259653887, guid: 156c468c13a70634188d63dfbf30ce35,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -598,12 +609,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3250067107259653886, guid: 156c468c13a70634188d63dfbf30ce35,
-        type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 6825696334506482498, guid: 8e0668e94322a9d418f06025d6ed1647,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 156c468c13a70634188d63dfbf30ce35, type: 3}
 --- !u!1 &1574958840814807007 stripped

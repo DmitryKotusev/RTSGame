@@ -57,8 +57,8 @@ public class IdleBehaviour : NPCBaseFSM
                 .CompareTo(Vector3.Distance(agent1.transform.position, NPC.transform.position));
             });
             // Set destination
-            NPC.GetComponent<NavMeshAgent>()
-                .SetDestination(comradsHelpNeeded[0].GetComponent<AgentData>().targetPosition);
+            // NPC.GetComponent<NavMeshAgent>()
+            //     .SetDestination(comradsHelpNeeded[0].GetComponent<AgentData>().targetPosition);
             NPC.GetComponent<AgentData>().comradToHelp = comradsHelpNeeded[0].gameObject;
             animator.SetBool("ComradNeedsHelp", true);
         }

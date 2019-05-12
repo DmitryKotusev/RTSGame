@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     [Tooltip("Once this time has passed the health increases by regenerateSpeed")]
     public float increaseHealthTime = 10;
     public float maxPoints = 100;
+    public GameObject deathParticles;
 
     [Header("HealthBar reference")]
     [SerializeField]
@@ -44,6 +45,8 @@ public class Health : MonoBehaviour
         healthPoints = Mathf.Clamp(healthPoints - damagePoints, 0, maxPoints);
         if (healthPoints == 0)
         {
+            GameObject particles = Instantiate(deathParticles, transform.position, transform.rotation);
+            Destroy(particles, 2f);
             Destroy(gameObject);
         }
     }

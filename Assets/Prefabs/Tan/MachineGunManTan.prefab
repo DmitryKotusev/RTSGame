@@ -308,6 +308,8 @@ MonoBehaviour:
   regenerateSpeed: 1
   increaseHealthTime: 5
   maxPoints: 100
+  deathParticles: {fileID: 4839367136622384033, guid: 2ced58c1008300444af5b0789c493b90,
+    type: 3}
   healthBar: {fileID: 6315642014538428949}
   healthPoints: 0
 --- !u!95 &6315642014264366589
@@ -344,6 +346,9 @@ MonoBehaviour:
   weapon: {fileID: 8800887522721736542}
   agentTeam: 1
   lookDistance: 15
+  needHelp: 0
+  targetPosition: {x: 0, y: 0, z: 0}
+  comradToHelp: {fileID: 0}
 --- !u!1 &6315642014538428946
 GameObject:
   m_ObjectHideFlags: 0
