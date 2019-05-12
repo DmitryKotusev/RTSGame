@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class IdleBehaviour : NPCBaseFSM
 {
@@ -19,34 +21,53 @@ public class IdleBehaviour : NPCBaseFSM
     // OnStateUpdate is called before OnStateUpdate is called on any state inside this state machine
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        LookAround(animator);
+        LookAroundForEnemies(animator);
+        LookAroundForHelpRequest(animator);
     }
 
-    // OnStateExit is called before OnStateExit is called on any state inside this state machine
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    private void LookAroundForHelpRequest(Animator animator)
+    {
+        Collider npcsCollider = NPC.GetComponent<Collider>();
+        npcsCollider.enabled = false;
+        Collider[] agentsColliders = Physics.OverlapSphere(NPC.transform.position, NPC.GetComponent<AgentData>().lookDistance, agentsMask);
 
-    // OnStateMove is called before OnStateMove is called on any state inside this state machine
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+        List<Collider> comradsHelpNeeded = new List<Collider>();
+        for (int i = 0; i < agentsColliders.Length; i++)
+        {
+            // Enemy agent detected
+            if (agentsColliders[i].GetComponent<AgentData>().agentTeam == NPC.GetComponent<AgentData>().agentTeam)
+            {
+                if (agentsColliders[i].GetComponent<AgentData>().needHelp)
+                {
+                    comradsHelpNeeded.Add(agentsColliders[i]);
+                }
+            }
+        }
+        if (comradsHelpNeeded.Count == 0)
+        {
+            npcsCollider.enabled = true;
+            return;
+        }
 
-    // OnStateMachineEnter is called when entering a state machine via its Entry Node
-    //override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
-    //{
-    //    
-    //}
+        if (!animator.GetBool("AttackEnemy") && !animator.GetBool("MoveToNewDestination"))
+        {
+            comradsHelpNeeded.Sort((agent1, agent2) =>
+            {
+                return Vector3.Distance(agent2.transform.position, NPC.transform.position)
+                .CompareTo(Vector3.Distance(agent1.transform.position, NPC.transform.position));
+            });
+            // Set destination
+            NPC.GetComponent<NavMeshAgent>()
+                .SetDestination(comradsHelpNeeded[0].GetComponent<AgentData>().targetPosition);
+            NPC.GetComponent<AgentData>().comradToHelp = comradsHelpNeeded[0].gameObject;
+            animator.SetBool("ComradNeedsHelp", true);
+        }
+        
 
-    // OnStateMachineExit is called when exiting a state machine via its Exit Node
-    //override public void OnStateMachineExit(Animator animator, int stateMachinePathHash)
-    //{
-    //    
-    //}
+        npcsCollider.enabled = true;
+    }
 
-    void LookAround(Animator animator)
+    void LookAroundForEnemies(Animator animator)
     {
         Collider npcsCollider = NPC.GetComponent<Collider>();
         npcsCollider.enabled = false;
@@ -65,7 +86,7 @@ public class IdleBehaviour : NPCBaseFSM
                     if (raycastHit.transform.gameObject == agentsColliders[i].transform.gameObject)
                     {
                         animator.SetBool("AttackEnemy", true);
-                    } 
+                    }
                 }
             }
         }

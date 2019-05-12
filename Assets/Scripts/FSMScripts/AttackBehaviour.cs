@@ -33,14 +33,30 @@ public class AttackBehaviour : NPCBaseFSM
         {
             // Set flag!!
             animator.SetBool("AttackEnemy", false);
+            OkSignal();
             return;
         }
+
         currentTarget = ChooseTarget(visibleTargets);
+        // Signal of help required
+        HelpSignal();
+
         if (LockOnTarget())
         {
             LockWeaponOnTarget();
             TryShoot();
         }
+    }
+
+    private void HelpSignal()
+    {
+        NPC.GetComponent<AgentData>().targetPosition = currentTarget.transform.position;
+        NPC.GetComponent<AgentData>().needHelp = true;
+    }
+
+    private void OkSignal()
+    {
+        NPC.GetComponent<AgentData>().needHelp = false;
     }
 
     // OnStateIK is called before OnStateIK is called on any state inside this state machine

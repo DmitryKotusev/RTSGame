@@ -7,11 +7,15 @@ public class AgentData : MonoBehaviour
     public GameObject weapon;
     public AgentTeam agentTeam;
     public float lookDistance;
+    public bool needHelp;
+    public Vector3 targetPosition;
+    public GameObject comradToHelp;
 
     private GameManager gameManager;
 
     private void Start()
     {
+        needHelp = false;
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
