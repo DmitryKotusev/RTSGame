@@ -14,14 +14,14 @@ public class AttackBehaviour : NPCBaseFSM
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
-        // weaponNormalRotation = NPC.GetComponent<AgentData>().weapon.transform.localRotation;
+        weaponNormalRotation = NPC.GetComponent<AgentData>().weapon.transform.localRotation;
         // Debug.Log(weaponNormalRotation);
     }
 
     // OnStateExit is called before OnStateExit is called on any state inside this state machine
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        // NPC.GetComponent<AgentData>().weapon.transform.localRotation = weaponNormalRotation;
+        NPC.GetComponent<AgentData>().weapon.transform.localRotation = weaponNormalRotation;
         // Debug.Log(NPC.GetComponent<AgentData>().weapon.transform.rotation);
     }
 
@@ -53,7 +53,9 @@ public class AttackBehaviour : NPCBaseFSM
 
     private void LockWeaponOnTarget()
     {
-        NPC.GetComponent<AgentData>().weapon.transform.parent.LookAt(currentTarget.transform);
+        NPC.GetComponent<AgentData>().weapon.transform.LookAt(currentTarget.transform);
+        NPC.GetComponent<AgentData>().weapon.transform
+            .LookAt(NPC.GetComponent<AgentData>().weapon.transform.position - NPC.GetComponent<AgentData>().weapon.transform.right);
     }
 
     private void TryShoot()

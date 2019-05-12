@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c39397baf3cae94698a2696420bcd0c, type: 3}
   m_Name: ShotGunConfig
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 35
   rateOfFire: 4
   bulletSpeed: 400
   bulletLifeTime: 10

@@ -9,9 +9,11 @@ public class WeaponScript : MonoBehaviour
     public WeaponConfig weaponConfig;
 
     float latestShotTime;
+    AudioSource shotPlayer;
 
     private void Start()
     {
+        shotPlayer = GetComponent<AudioSource>();
         latestShotTime = 0;
     }
 
@@ -34,5 +36,6 @@ public class WeaponScript : MonoBehaviour
         bulletScript.SetLifeTime(weaponConfig.bulletLifeTime);
         bulletScript.SetDamage(weaponConfig.damage);
         bulletClone.GetComponent<Rigidbody>().AddForce(launchTransform.transform.up * weaponConfig.bulletSpeed);
+        shotPlayer.Play();
     }
 }

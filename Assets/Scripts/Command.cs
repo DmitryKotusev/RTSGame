@@ -45,6 +45,11 @@ public class Command : MonoBehaviour
 
     void GiveMoveCommand(Vector3 destination, List<GameObject> selectedUnits)
     {
+        if (selectedUnits[0] == null)
+        {
+            selectedUnits.Clear();
+            return;
+        }
         NavMeshAgent leadersAgent = selectedUnits[0].GetComponent<NavMeshAgent>();
         float agentRadius = leadersAgent.radius;
         NavMeshPath path = new NavMeshPath();

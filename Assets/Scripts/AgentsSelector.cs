@@ -21,6 +21,10 @@ public class AgentsSelector : MonoBehaviour
 
     public List<GameObject> GetSelectedObjects()
     {
+        selectedObjects.RemoveAll((obj) =>
+        {
+            return obj == null;
+        });
         return selectedObjects;
     }
 
