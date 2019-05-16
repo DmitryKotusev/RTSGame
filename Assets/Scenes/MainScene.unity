@@ -670,6 +670,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RiffleManGreen (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6148455347101466781, guid: 4947c254e48d8b94d90e0977d0ae231b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6148455347101466780, guid: 4947c254e48d8b94d90e0977d0ae231b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2959,6 +2964,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MachineGunManTan
       objectReference: {fileID: 0}
+    - target: {fileID: 6315642014264366587, guid: ef2c99f8a8b3add42b9597d41dd46281,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6315642014264366578, guid: ef2c99f8a8b3add42b9597d41dd46281,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3139,6 +3149,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MachineGunManGreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277785124247175621, guid: 67fccf1f68d6a4046892d9634dcf6686,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3277785124247175620, guid: 67fccf1f68d6a4046892d9634dcf6686,
         type: 3}
@@ -4470,6 +4485,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RiffleManGreen
       objectReference: {fileID: 0}
+    - target: {fileID: 6148455347101466781, guid: 4947c254e48d8b94d90e0977d0ae231b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6148455347101466780, guid: 4947c254e48d8b94d90e0977d0ae231b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4569,6 +4589,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RiffleManTan (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2665288936764027927, guid: 3f4087868c8e0814eaf580672417ddd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2665288936764027926, guid: 3f4087868c8e0814eaf580672417ddd1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4637,6 +4662,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RiffleManTan
+      objectReference: {fileID: 0}
+    - target: {fileID: 2665288936764027927, guid: 3f4087868c8e0814eaf580672417ddd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2665288936764027926, guid: 3f4087868c8e0814eaf580672417ddd1,
         type: 3}
@@ -6656,6 +6686,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShotGunManTan (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773045520698753022, guid: ea6c5e88230d90c43b0d744b2e2d735a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5773045520698753015, guid: ea6c5e88230d90c43b0d744b2e2d735a,
         type: 3}
@@ -10466,6 +10501,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MachineGunManTan (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6315642014264366587, guid: ef2c99f8a8b3add42b9597d41dd46281,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6315642014264366578, guid: ef2c99f8a8b3add42b9597d41dd46281,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12229,6 +12269,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MachineGunManGreen (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3277785124247175621, guid: 67fccf1f68d6a4046892d9634dcf6686,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3277785124247175620, guid: 67fccf1f68d6a4046892d9634dcf6686,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13278,6 +13323,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShotGunManGreen
       objectReference: {fileID: 0}
+    - target: {fileID: 1048979430735561909, guid: 7fbd7a7eaeb015643a8dd2092bf09fb2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1048979430735561908, guid: 7fbd7a7eaeb015643a8dd2092bf09fb2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13860,6 +13910,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RiffleManTan (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2665288936764027927, guid: 3f4087868c8e0814eaf580672417ddd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2665288936764027926, guid: 3f4087868c8e0814eaf580672417ddd1,
         type: 3}
@@ -15047,6 +15102,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShotGunManTan (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5773045520698753022, guid: ea6c5e88230d90c43b0d744b2e2d735a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5773045520698753015, guid: ea6c5e88230d90c43b0d744b2e2d735a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15289,6 +15349,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShotGunManGreen (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1048979430735561909, guid: 7fbd7a7eaeb015643a8dd2092bf09fb2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1048979430735561908, guid: 7fbd7a7eaeb015643a8dd2092bf09fb2,
         type: 3}
@@ -15907,6 +15972,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RiffleManTan (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2665288936764027927, guid: 3f4087868c8e0814eaf580672417ddd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2665288936764027926, guid: 3f4087868c8e0814eaf580672417ddd1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16243,6 +16313,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RiffleManTan (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2665288936764027927, guid: 3f4087868c8e0814eaf580672417ddd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2665288936764027926, guid: 3f4087868c8e0814eaf580672417ddd1,
         type: 3}
@@ -16766,6 +16841,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShotGunManGreen (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1048979430735561909, guid: 7fbd7a7eaeb015643a8dd2092bf09fb2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1048979430735561908, guid: 7fbd7a7eaeb015643a8dd2092bf09fb2,
         type: 3}
@@ -18071,6 +18151,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RiffleManTan (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2665288936764027927, guid: 3f4087868c8e0814eaf580672417ddd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2665288936764027926, guid: 3f4087868c8e0814eaf580672417ddd1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18226,6 +18311,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RiffleManGreen (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148455347101466781, guid: 4947c254e48d8b94d90e0977d0ae231b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6148455347101466780, guid: 4947c254e48d8b94d90e0977d0ae231b,
         type: 3}
@@ -19105,6 +19195,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShotGunManTan (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5773045520698753022, guid: ea6c5e88230d90c43b0d744b2e2d735a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5773045520698753015, guid: ea6c5e88230d90c43b0d744b2e2d735a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19209,6 +19304,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShotGunManTan (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773045520698753022, guid: ea6c5e88230d90c43b0d744b2e2d735a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5773045520698753015, guid: ea6c5e88230d90c43b0d744b2e2d735a,
         type: 3}
@@ -20349,6 +20449,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShotGunManTan
       objectReference: {fileID: 0}
+    - target: {fileID: 5773045520698753022, guid: ea6c5e88230d90c43b0d744b2e2d735a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5773045520698753015, guid: ea6c5e88230d90c43b0d744b2e2d735a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20762,6 +20867,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MachineGunManTan (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315642014264366587, guid: ef2c99f8a8b3add42b9597d41dd46281,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6315642014264366578, guid: ef2c99f8a8b3add42b9597d41dd46281,
         type: 3}

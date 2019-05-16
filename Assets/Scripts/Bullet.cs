@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // float speed;
     float damage;
     float timeOfBirth;
     float timeToLive;
@@ -16,17 +15,11 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        // Move();
         if (isBorn)
         {
             CheckLifeSpan();
         }
     }
-
-    //public void SetSpeed(float speed)
-    //{
-    //    this.speed = speed;
-    //}
 
     public void SetLifeTime(float timeToLive)
     {
@@ -48,16 +41,8 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    //void Move()
-    //{
-    //    transform.Translate(Vector3.up * speed * Time.deltaTime);
-    //}
-
     void OnCollisionEnter(Collision col)
     {
-        // Explosion
-        // GameObject e = Instantiate(explosion, this.transform.position, Quaternion.identity);
-        // Destroy(e, 1.5f);
         if (col.transform.tag == "Agent")
         {
             Health targetHealth = col.transform.GetComponent<Health>();

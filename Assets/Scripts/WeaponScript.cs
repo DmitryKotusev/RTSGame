@@ -31,7 +31,6 @@ public class WeaponScript : MonoBehaviour
     {
         latestShotTime = Time.time;
         GameObject bulletClone = Instantiate(bullet, launchTransform.position, launchTransform.rotation);
-        // SetBulletsParameters
         Bullet bulletScript = bulletClone.GetComponent<Bullet>();
         bulletScript.SetLifeTime(weaponConfig.bulletLifeTime);
         bulletScript.SetDamage(weaponConfig.damage);
